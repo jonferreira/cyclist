@@ -77,12 +77,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             if log_date > date.today():
                 raise ValueError("Cannot log a period start in the future")
 
-            # Persist to ConfigEntry
-            # entry = hass.config_entries.async_get_entry(entry.entry_id)
-            # new_options = dict(entry.options)
-            # new_options[CONF_LAST_PERIOD_START] = log_date.isoformat()
-            # hass.config_entries.async_update_entry(entry, options=new_options)
-
             # Find target entries
             ent_reg = er.async_get(hass)
             entry_ids = set()
